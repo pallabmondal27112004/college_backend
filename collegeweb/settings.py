@@ -142,7 +142,7 @@ MEDIA_URL = '/media/'
 # Directory on the filesystem where uploaded files will be stored
 MEDIA_ROOT = BASE_DIR / 'media'
 LOGIN_URL = '/base/login/'  # Adjust based on your project structure
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'-
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # SESSION_COOKIE_SECURE = True  # Enforces HTTPS for session cookies
 # SESSION_EXPIRE_AT_BROWSER_CLOSE = True  # Session ends when the browser closes
 # SESSION_COOKIE_AGE = 3600  # Session expires after 1 hour
