@@ -1,0 +1,162 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<style>
+  /* Header overlay base and responsive tweaks */
+  .header-overlay {
+    height: 600px;
+    background-color: rgba(5, 0, 0, 0.85);
+  }
+  @media (max-width: 767.98px) {
+    .header-overlay {
+      height: 300px;
+    }
+    .header-overlay h1 {
+      font-size: 1.75rem;
+      padding: 0.5rem 1rem;
+    }
+    .search-group {
+      flex-direction: column !important;
+      gap: 0.5rem !important;
+      width: 90% !important;
+    }
+  }
+  @media (min-width: 768px) {
+    .search-group {
+      width: 75%;
+    }
+  }
+</style>
+
+<!-- Header Section with Overlay -->
+<div class="container-fluid position-relative p-0">
+  <div class="header-overlay d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 w-100">
+    <h1 class="text-white text-center fw-bolder">Contact us as soon as possible</h1>
+
+    <div class="d-flex search-group justify-content-center align-items-stretch mt-3">
+      <!-- Courses dropdown -->
+      <div class="dropdown flex-grow-1">
+        <button
+          class="btn bg-white text-black text-start w-100"
+          type="button"
+          id="courseDropdown"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Courses
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="courseDropdown">
+          <li><a class="dropdown-item" href="#">Course 1</a></li>
+          <li><a class="dropdown-item" href="#">Course 2</a></li>
+          <li><a class="dropdown-item" href="#">Course 3</a></li>
+          <li><a class="dropdown-item" href="#">Course 4</a></li>
+        </ul>
+      </div>
+
+      <!-- Keyword input -->
+      <input
+        type="text"
+        class="form-control flex-grow-2"
+        placeholder="Keyword"
+      />
+
+      <!-- Search button -->
+      <button class="btn btn-danger px-4">
+        Search
+      </button>
+    </div>
+  </div>
+
+  <!-- Background image -->
+  <img
+    src="{% static 'assets/imgs/nimgs/page-header.jpg' %}"
+    class="w-100"
+    alt="Header Image"
+    style="object-fit: cover;"
+  />
+</div>
+
+<!-- Overlay Bottom Decoration -->
+<div class="w-100 position-relative" style="top: -3rem; z-index: 10;">
+  <img
+    src="{% static 'assets/imgs/nimgs/overlay-bottom.png' %}"
+    alt=""
+    class="w-100"
+  />
+</div>
+
+<!-- Contact Info and Form -->
+<div class="container my-5">
+  <div class="row gx-4">
+    <!-- Contact Info -->
+    <div class="col-12 col-md-4">
+      <div class="row mb-4 align-items-center">
+        <div class="col-auto bg-primary text-white p-3 rounded-start">
+          <i class="fa-solid fa-location-dot fs-2"></i>
+        </div>
+        <div class="col ps-0">
+          <h5 class="fw-bold mb-1">Our Location</h5>
+          <p class="text-secondary mb-0">123 Street, New York, USA</p>
+        </div>
+      </div>
+      <div class="row mb-4 align-items-center">
+        <div class="col-auto bg-warning text-white p-3 rounded-start">
+          <i class="fa-solid fa-phone fs-2"></i>
+        </div>
+        <div class="col ps-0">
+          <h5 class="fw-bold mb-1">Call Us</h5>
+          <p class="text-secondary mb-0">+012 345 6789</p>
+        </div>
+      </div>
+      <div class="row mb-4 align-items-center">
+        <div class="col-auto bg-danger text-white p-3 rounded-start">
+          <i class="fa-solid fa-envelope fs-2"></i>
+        </div>
+        <div class="col ps-0">
+          <h5 class="fw-bold mb-1">Email Us</h5>
+          <p class="text-secondary mb-0">info@example.com</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="col-12 col-md-6 offset-md-1">
+      <p class="text-danger">Need Help?</p>
+      <h2 class="fw-bold">Send Us A Message</h2>
+      <form class="d-flex flex-column gap-3">
+        <div class="row g-2">
+          <div class="col-12 col-md-6">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="First name"
+            />
+          </div>
+          <div class="col-12 col-md-6">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Last name"
+            />
+          </div>
+        </div>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Subject"
+        />
+        <textarea
+          class="form-control"
+          rows="4"
+          placeholder="Message"
+        ></textarea>
+        <button class="btn btn-danger align-self-start">
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
