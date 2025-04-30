@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-^gye^av*w0c&wk9$0dtfj3k3@ljw==m281^(&@^w*9d&!95*qe
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 AUTH_USER_MODEL = 'loginapp.customeruser'
 
@@ -142,7 +142,7 @@ MEDIA_URL = '/media/'
 # Directory on the filesystem where uploaded files will be stored
 MEDIA_ROOT = BASE_DIR / 'media'
 LOGIN_URL = '/base/login/'  # Adjust based on your project structure
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'-
 # SESSION_COOKIE_SECURE = True  # Enforces HTTPS for session cookies
 # SESSION_EXPIRE_AT_BROWSER_CLOSE = True  # Session ends when the browser closes
 # SESSION_COOKIE_AGE = 3600  # Session expires after 1 hour
